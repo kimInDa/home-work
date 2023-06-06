@@ -1,0 +1,17 @@
+.validation {
+  
+}
+
+.validation__link {
+  display: block;
+  width: 15.625rem;
+  height: 2.3125rem;
+  box-sizing: border-box;
+  padding: 8px 8px 8px 36px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  background: url(./images/validation_icon.png) no-repeat 16px 50%  #CCCCCC;
+  border-radius: 34px;
+}
