@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission-02.Login</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  
+  <div class="login__container">
+    <h2 class="login__title">로그인</h2>
+
+    <div class="loginWrapper">
+      <form action="/" method="post" class="loginForm" name="loginForm">
+        <fieldset>
+          <legend class="a11yHidden">로그인 정보 입력폼</legend>
+
+          <div class="loginForm__group">
+            <div class="input__wrapper">
+              <label for="id" class="formInput__lable">아이디</label>
+              <input type="text" id="id"  name="id" required class="formInput__input" placeholder="euid@euid.dev"/>
+            </div>
+
+            <div class="input__wrapper">
+              <label for="password" class="formInput__lable">비밀번호</label>
+              <input type="password" id="password" class="formInput__input" placeholder="8자리 이상" />
+            </div>
+          </div>
+
+          <button type="submit" class="button__loginSubmit">로그인</button>
+          
+        </fieldset>
+      </form>
+
+        <ul class="memberOnly">
+          <li><a href="/">회원가입</a></li>
+          <li><a href="/">아이디 비밀번호 찾기</a></li>
+        </ul>
+    </div>
+  </div>
+
+</body>
+</html>
