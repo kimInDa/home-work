@@ -68,7 +68,7 @@ button {
   margin-bottom: 8px;
 }
 
-.input__wrapper {
+.inputinputWrapper {
   font-size: 0;
 }
 
@@ -114,14 +114,14 @@ button {
   border-top: 1px solid #CCC;
 }
 
-.memberOnly li {
+.memberOnly__list {
   margin: 4px 0 4px 0;
 }
 
-.memberOnly li:first-child {
+.memberOnly__list:first-child {
   float: left;
 }
 
-.memberOnly li:last-child {
+.memberOnly__list:last-child {
   float: right;
 }
