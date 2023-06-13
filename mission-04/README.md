@@ -80,9 +80,9 @@
 
 * **&lt;a&gt;** 에는 `text-decoration: none;`을 부여하여 에이전트 스타일을 없앤 뒤에 예제에 따른 스타일링을 합니다.
   
-* 더보기의 + 플러스 기호는 가상 클래스 `::before`의 content로 이미지를 넣어줍니다. 
+* 더보기의 + 플러스 기호는 가상 클래스 `::before`의 content로 이미지를 넣어 구현합니다. 
   
-* 플러스 기호의 위치는 **position**을 이용하여 조정하여 줍니다. **&lt;a&gt;** 에 `position:relative` 를,  **&lt;a&gt;의 ::before** 에는 `position:absolute;`를 사용하여 플러스 기호가 &lt;a&gt;를 기준으로 위치가 조정되도록 합니다.
+* 플러스 기호의 위치는 **position**을 이용하여 조정합니다. **&lt;a&gt;** 에 `position:relative` 를,  **&lt;a&gt;의 ::before** 에는 `position:absolute;`를 사용하여 플러스 기호가 &lt;a&gt;를 기준으로 위치가 조정되도록 합니다.
 
   ``` CSS
   .news__more {
@@ -93,7 +93,7 @@
   .news__more::before {
   content: url(./plus-icon.png);
   position: absolute;
-  right: 41px;
+  right: 41px; /* '더보기'의 width 37px + 간격 4px */
   }
   ```
 <br />
