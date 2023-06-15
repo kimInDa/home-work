@@ -73,10 +73,10 @@
 
 * **&lt;li&gt;** 의 순서에 따라 숫자를 표현하기 위해 ``counter-increment`` 속성을 사용합니다.
 * 갯수를 셀 **&lt;li&gt;** 에 ``counter-increment`` 속성을 적용하면 number에 **&lt;li&gt;** 의 갯수가 담깁니다. 
-* 가상 요소 ``::before``로  **&lt;li&gt;** 의 앞에 번호를 구현하기 위해, ``::before``의 ``content `` 값으로 ``counter()``  함수를 사용합니다.
+* 가상 요소 ``::before``로  **&lt;li&gt;** 의 앞에 번호를 구현하기 위해, ``::before``의 ``content`` 값으로 ``counter()``  함수를 사용합니다.
 * 생성된 번호는 ``inline`` 상태이므로 형제 요소와 가로 정렬을 유지하면서 width, height 값을 가질 수 있도록 ``display: inline-block;`` 속성을 부여합니다.
-* ``text-align: center;`` 속성으로 번호가 자신의 박스 안에서 가로 가운데 정렬이 되도록 합ㄴ다.
-* ``line-heihgt`` 값을 `` height`` 값과 동일하게 주어 번호가 세로 가운데 정렬이 되도록 합니다.
+* ``text-align: center;`` 속성으로 번호가 자신의 박스 안에서 가로 가운데 정렬이 되도록 합니다.
+* ``line-heihgt`` 값을 ``height`` 값과 동일하게 주어 번호가 자신의 박스 안에서 세로 가운데 정렬이 되도록 합니다.
   
   ```CSS
   .favorite-rank {
