@@ -23,8 +23,7 @@
 
 3. 그 다음으로는 영역의 주요 내용인 인기 사이트 순위를 마크업 합니다. 순서가 있는 목록이므로 **&lt;ol&gt;** 과 **&lt;li&gt;** 로 마크업합니다
    
-   * **&lt;li&gt;** 는 자식요소로 **&lt;span&gt;** 과 **&lt;a&gt;** 를 갖습니다.
-   * **&lt;span&gt;** 은 **&lt;ol&gt;** 이 기본 제공하는 숫자 대신 순위 숫자를 표기하고 CSS 스타일링을 하기 위한 마크업입니다.
+   * **&lt;li&gt;** 는 자식요소로 **&lt;a&gt;** 를 갖습니다.
    * **&lt;a&gt;** 는 순위의 각 사이트 이름을 클릭할 시 해당 사이트로 이동하는 기능을 제공합니다.
 
 4. 추가적인 정보를 제공하는 **+ 더보기** 는 가장 마지막에 둡니다. **+ 더보기** 를 클릭했을 때 인기 사이트에 대한 정보를 열람할 수 있는 페이지로 이동해야 하므로 **&lt;a&gt;** 요소를 사용합니다.
@@ -62,21 +61,8 @@
   ```
 <br />
 
-### ✢ 순위 목록 스타일링
-* 순위 목록 **&lt;li&gt;** 의 자식 요소인 **&lt;span&gt;** 과 **&lt;a&gt;** 를 정렬하기 위해서 **&lt;li&gt;** 에 ``display: flex``를 선언합니다.
-* ``flex 방향``을 ``row``로 하여 가로 정렬이 되도록 합니다.
-* 교차축을 기준으로 가운데 정렬이 되도록 ``align-items:center``를 선언합니다.
-  
-  ``` CSS
-  .favorite-rank {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-  }
-  ```
-<br />
 
-### ✢ 순위 숫자 스타일링
+### ✢ **&lt;ol&gt;** 숫자 스타일링
 * ``list-style:none`` 을 사용해서 **&lt;ol&gt;** 의 기본 숫자를 지웁니다.
   
   ```CSS
@@ -85,13 +71,28 @@
   }
   ```
 
-* 순위 번호를 갖는 모든 **&lt;span&gt;** 에 스타일링을 일괄 적용하도록, 해당하는 **&lt;span&gt;** 에게 ``.favorite-rankNumber`` 라는 공통의 클래스명을 줍니다. 
-* 해당 클래스명에 ``display: flex`` 속성을 사용하여 숫자를 가운데 정렬합니다.
+* **&lt;li&gt;** 의 순서에 따라 숫자를 표현하기 위해 ``counter-increment`` 속성을 사용합니다.
+* 갯수를 셀 **&lt;li&gt;** 에 ``counter-increment`` 속성을 적용하면 number에 **&lt;li&gt;** 의 갯수가 담깁니다. 
+* 가상 요소 ``::before``로  **&lt;li&gt;** 의 앞에 번호를 구현하기 위해, ``::before``의 ``content `` 값으로 ``counter()``  함수를 사용합니다.
+* 생성된 번호는 ``inline`` 상태이므로 형제 요소와 가로 정렬을 유지하면서 width, height 값을 가질 수 있도록 ``display: inline-block;`` 속성을 부여합니다.
+* ``text-align: center;`` 속성으로 번호가 자신의 박스 안에서 가로 가운데 정렬이 되도록 합ㄴ다.
+* ``line-heihgt`` 값을 `` height`` 값과 동일하게 주어 번호가 세로 가운데 정렬이 되도록 합니다.
+  
   ```CSS
-  .favorite-rankNumber {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .favorite-rank {
+    counter-increment: number;
+  }
+  .favorite-rank::before {
+    content: counter(number);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    color: #fff;
+    background: #A3A3A3;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 16px;
+    margin-right: 4px;
   }
   ```
   <br />
